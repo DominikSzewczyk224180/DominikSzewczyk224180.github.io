@@ -340,3 +340,13 @@ footer{background:var(--ink);color:rgba(255,255,255,.45);border-top:1px solid rg
   .logo-track [aria-hidden="true"]{display:none}
   .logo-track .logo-tile{margin:0 14px 14px 0}
 }
+
+/* ============================================================
+   WEB DEV PAGE (webdev.html)
+   Reuses the shared components (hero, .tool cards, .cards,
+   .chips, contact). Only addition: a 3-up grid for the
+   services block so six .tool cards sit as two tidy rows.
+   ============================================================ */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:880px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.svc-grid{grid-template-columns:1fr}}
