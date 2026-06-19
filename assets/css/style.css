@@ -388,3 +388,7 @@ footer{background:var(--ink);color:rgba(255,255,255,.45);border-top:1px solid rg
 .card-thumb .mini-open::after{content:"\2197";margin-left:7px;font-size:.9rem}
 .card:hover .card-thumb .mini-open{opacity:1}
 @media(prefers-reduced-motion:reduce){.card-thumb .mini-open{transition:none}}
+
+/* ---- Web Dev: real site screenshots as card thumbnails ---- */
+.card-thumb .shot-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .5s ease}
+.card:hover .card-thumb .shot-img{transform:scale(1.04)}
