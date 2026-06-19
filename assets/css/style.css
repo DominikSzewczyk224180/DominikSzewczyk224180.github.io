@@ -144,6 +144,15 @@ h2{font-family:var(--font-display);font-weight:600;font-size:clamp(1.7rem,3.6vw,
 .orgs-title{font-family:var(--font-display);font-weight:600;font-size:1.45rem;letter-spacing:-.01em;margin-bottom:18px;color:var(--ink)}
 .chips-lg{gap:12px}
 .chips-lg .chip{font-size:.92rem;padding:10px 16px;border-color:#d6d8ce;color:var(--ink);font-weight:500;background:#fff}
+.logo-wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+.logo-tile{height:88px;background:#fff;border:1px solid var(--line);border-radius:12px;display:flex;align-items:center;justify-content:center;padding:14px;transition:border-color .2s,transform .2s}
+.logo-tile:hover{border-color:var(--accent);transform:translateY(-2px)}
+.logo-tile img{max-height:46px;max-width:82%;object-fit:contain;filter:grayscale(1);opacity:.8;transition:filter .25s,opacity .25s}
+.logo-tile:hover img{filter:none;opacity:1}
+.logo-tile.dark{background:#1f232b;border-color:#1f232b}
+.logo-tile.dark img{filter:none;opacity:.96;max-height:30px}
+.logo-tile.text span{font-family:var(--font-display);font-weight:600;font-size:1rem;color:var(--ink-soft);text-align:center;letter-spacing:-.01em}
+.logo-tile.text:hover span{color:var(--accent-ink)}
 
 /* ---------------- SKILLS ---------------- */
 .skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
@@ -195,6 +204,10 @@ h2{font-family:var(--font-display);font-weight:600;font-size:clamp(1.7rem,3.6vw,
 footer{background:var(--ink);color:rgba(255,255,255,.45);border-top:1px solid rgba(255,255,255,.1);padding:28px 0}
 .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;font-family:var(--font-mono);font-size:.76rem}
 .foot a{color:var(--accent-pale)}
+.chat-fab{position:fixed;right:22px;bottom:22px;z-index:80;display:inline-flex;align-items:center;gap:9px;background:#25D366;color:#fff;padding:13px 18px;border-radius:999px;font-family:var(--font-mono);font-size:.8rem;text-transform:uppercase;letter-spacing:.04em;box-shadow:0 16px 34px -12px rgba(0,0,0,.45);transition:transform .2s,box-shadow .2s}
+.chat-fab:hover{transform:translateY(-3px);box-shadow:0 22px 40px -14px rgba(0,0,0,.5);color:#fff}
+.chat-fab svg{display:block}
+@media(max-width:480px){.chat-fab span{display:none}.chat-fab{padding:14px}}
 
 /* ---------------- PAGE HERO (projects.html) ---------------- */
 .page-hero{padding:70px 0 24px}
