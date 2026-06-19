@@ -395,4 +395,12 @@ footer{background:var(--ink);color:rgba(255,255,255,.45);border-top:1px solid rg
 
 /* ---- Larger, more legible numbered section labels (site-wide) ---- */
 .sec-label{gap:18px}
-@media(max-width:600px){.sec-label span{font-size:.92rem}}
+@media(max-width:600px){.sec-label span{font-size:.92rem;white-space:normal}}
+
+/* ---- Fix: prevent wide content from stretching grids on mobile (horizontal overflow) ---- */
+.about-grid,.contact-grid{min-width:0}
+.about-grid>*,.contact-grid>*{min-width:0}
+.orgs{overflow:hidden}
+.logo-marquee{max-width:100%}
+.contact-links a{min-width:0}
+.contact-links .val{overflow-wrap:anywhere}
