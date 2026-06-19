@@ -158,7 +158,6 @@ h2{font-family:var(--font-display);font-weight:600;font-size:clamp(1.7rem,3.6vw,
 .logo-marquee:hover .logo-track{animation-play-state:paused}
 .logo-track .logo-tile{flex:0 0 auto;width:184px;margin-right:14px}
 @keyframes logoscroll{from{transform:translateX(-50%)}to{transform:translateX(0)}}
-.detail-logo{height:30px;width:auto;max-width:210px;object-fit:contain;display:block;margin-bottom:20px}
 
 /* ---------------- SKILLS ---------------- */
 .skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
