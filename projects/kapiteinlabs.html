@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Machine Learning for Plasma Reactor Optimisation | Dominik Szewczyk</title>
+<meta name="description" content="A physics-informed model and Streamlit dashboard that predicts a plasma reactor&#x27;s ozone output, and works backwards from a target output to the settings that reach it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body><header>
+  <div class="wrap nav">
+    <a class="logo" href="../index.html">Dominik<span>.</span></a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav-menu">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#contact">Contact</a>
+      <div class="seg">
+        <a class="seg-btn active" href="../index.html">Data Science</a>
+        <a class="seg-btn" href="../webdev.html">Web Dev<small>soon</small></a>
+      </div>
+      <a class="btn-cv" href="../docs/cv.pdf">CV</a>
+    </nav>
+  </div>
+</header>
+<section class="detail-hero">
+  <div class="wrap">
+    <p class="eyebrow">// KapiteinLabs · graduation internship · 2026</p>
+    <h1>Machine Learning for Plasma Reactor Optimisation</h1>
+    <p class="subtitle">Predicting and maximising ozone production</p>
+    <p class="summary">A predict and optimise machine learning pipeline, delivered as a no-code Streamlit dashboard, that estimates a plasma reactor&#x27;s ozone output from its settings and recommends the settings needed to reach a target output. Built end to end over a six-month graduation internship.</p>
+    <div class="cta-row"><a class="btn btn-primary" href="https://kapiteinlabs-ozone.streamlit.app" target="_blank" rel="noopener">Open the live dashboard →</a><a class="btn btn-ghost" href="../docs/graduation-thesis.pdf">Read the thesis (PDF)</a></div>
+    <div class="meta"><div><span class="k">My role</span><span class="v">Sole data scientist, end to end</span></div><div><span class="k">Duration</span><span class="v">6-month internship</span></div><div><span class="k">Company</span><span class="v">KapiteinLabs</span></div><div><span class="k">Data</span><span class="v">TU Eindhoven, 438 measurements</span></div></div>
+  </div>
+</section>
+<section class="section"><div class="wrap reveal"><div class="sec-label"><span>01 / the problem</span><i></i></div><div class="prose"><p>KapiteinLabs builds plasma reactors that turn short high-voltage pulses into ozone for water and air treatment. Ozone cannot be stored, so every application needs its own generator, and designing one for a specific output currently means running a new lab experiment for every configuration. That is slow and expensive.</p><p>It is harder still because KapiteinLabs does not run most of its own experiments. The data comes from a research group at <strong>TU Eindhoven</strong>. That creates two pains: <strong>internally</strong> there is no fast way to know which reactor settings are worth testing next, and <strong>commercially</strong> there is no quick way to tell a client what reactor they would need for their ozone demand.</p></div></div></section>
+<section class="section section-alt"><div class="wrap reveal"><div class="sec-label"><span>02 / what I built</span><i></i></div><div class="tools"><div class="tool"><span class="ttag">tool 01 · forward</span><h3>Prediction</h3><p>Enter a set of reactor settings such as length, diameter, voltage, repetition rate, flow rate, and pulse width, and get the predicted ozone output instantly. Engineers test ideas on the model first and only run the experiments that look promising.</p></div><div class="tool"><span class="ttag">tool 02 · inverse</span><h3>Optimisation</h3><p>Work the other way. Enter a target ozone output, fix whatever constraints you have such as a reactor geometry, and the tool searches for the settings that reach it, answering a client&#x27;s question about which reactor they need in seconds.</p></div></div></div></section>
+<section class="section"><div class="wrap reveal"><div class="sec-label"><span>03 / models and results</span><i></i></div><div class="prose" style="margin-bottom:26px"><p>I trained five models on the same train and test split, from a linear baseline up to a <strong>physics-informed neural network (PINN)</strong> with monotonicity constraints drawn from the plasma ozone literature. The PINN won, and the physics constraints acted as regularisation, nudging the model to respect known physical relationships instead of fitting noise.</p></div><div class="chart"><div class="chead"><span class="title">Test-set R² by model</span><span class="mono">higher is better</span></div><div class="bar-row base"><span class="name">Linear Regression</span><div class="track"><div class="fill" data-w="14"></div></div><span class="val">0.570</span></div><div class="bar-row"><span class="name">Gradient Boosting</span><div class="track"><div class="fill" data-w="93.6"></div></div><span class="val">0.968</span></div><div class="bar-row"><span class="name">XGBoost</span><div class="track"><div class="fill" data-w="95.2"></div></div><span class="val">0.976</span></div><div class="bar-row"><span class="name">Neural Network</span><div class="track"><div class="fill" data-w="97.4"></div></div><span class="val">0.987</span></div><div class="bar-row best"><span class="name">PINN ★</span><div class="track"><div class="fill" data-w="97.6"></div></div><span class="val">0.988</span></div></div></div></section>
+<section class="section section-alt"><div class="wrap reveal"><div class="metrics"><div class="metric"><div class="num">0.<span class="accent">988</span></div><span class="lbl">R² · best model</span></div><div class="metric"><div class="num">1.48</div><span class="lbl">MAE · g/kWh</span></div><div class="metric"><div class="num">1.9<span class="accent">%</span></div><span class="lbl">MAPE</span></div><div class="metric"><div class="num">438</div><span class="lbl">measurements</span></div></div></div></section>
+<section class="section"><div class="wrap reveal"><div class="sec-label"><span>04 / the dashboard</span><i></i></div><div class="prose" style="margin-bottom:26px"><p>Everything ships as one Streamlit app that engineers and clients use without writing code. It shows the model's error next to every prediction, flags inputs outside the trained range, and can be retrained on new experiments as the dataset grows.</p></div><div class="shot"><div class="frame"><i></i><i></i><i></i><span>kapiteinlabs-ozone.streamlit.app : forward prediction</span></div><img src="../assets/img/kapiteinlabs_forward.jpg" alt="Forward prediction tab"><div class="cap"><b>Forward prediction.</b> Set six reactor parameters and a model; the predicted ozone yield updates live, with test-set MAE, MAPE, and an in-range indicator alongside it.</div></div><div class="shot"><div class="frame"><i></i><i></i><i></i><span>kapiteinlabs-ozone.streamlit.app : inverse optimisation</span></div><img src="../assets/img/kapiteinlabs_inverse.jpg" alt="Inverse optimisation result"><div class="cap"><b>Inverse optimisation.</b> Target 70 g/kWh with the geometry fixed, and the optimiser recovers the voltage, repetition rate, flow, and pulse-width settings that land within 0.006 g/kWh of the target.</div></div></div></section>
+<section class="section section-alt"><div class="wrap reveal"><div class="sec-label"><span>05 / the hard part</span><i></i></div><div class="prose"><p>The real challenge was not the modelling, it was the data. Campaign 5 arrived as <strong>2,000+ raw oscilloscope files</strong> plus parallel UV-spectrometry readings, with no documentation, inconsistent folder layouts, and per-date exceptions. The original analysis lived in MATLAB.</p><p>I reverse-engineered that pipeline and rebuilt it from scratch in <strong>around 1,500 lines of Python</strong>, covering signal processing, energy integration, and Beer-Lambert ozone extraction, then validated it against the original MATLAB outputs before trusting a single row. Cleaning took the dataset from 726 down to a reliable 438 measurements.</p></div></div></section>
+<section class="section"><div class="wrap reveal"><div class="callout"><div class="big">Reactor length and repetition rate account for about 66% of the predictive signal.</div><p>Permutation importance across all four non-linear models pointed at the same two physical levers, consistent with the plasma physics and a useful steer for which parameters to focus future experiments on.</p></div></div></section>
+<section class="section section-alt"><div class="wrap reveal"><div class="sec-label"><span>06 / tech</span><i></i></div><div class="stack"><span class="chip">Python</span><span class="chip">PyTorch / Keras</span><span class="chip">PINN</span><span class="chip">scikit-learn</span><span class="chip">XGBoost</span><span class="chip">scipy (differential evolution)</span><span class="chip">Streamlit</span><span class="chip">pandas / numpy</span><span class="chip">MATLAB to Python</span><span class="chip">UV spectrometry</span></div></div></section>
+<footer>
+  <div class="wrap foot">
+    <a class="back" href="../index.html#projects">&larr; Back to all projects</a>
+    <span>Designed and built from scratch &middot; HTML &middot; CSS &middot; JS</span>
+  </div>
+</footer>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

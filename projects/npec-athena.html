@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ATHENA: MLOps for Plant Science | Dominik Szewczyk</title>
+<meta name="description" content="Turning research machine learning models into a production-ready, cloud-deployed application for plant phenotyping at NPEC.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body><header>
+  <div class="wrap nav">
+    <a class="logo" href="../index.html">Dominik<span>.</span></a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav-menu">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#contact">Contact</a>
+      <div class="seg">
+        <a class="seg-btn active" href="../index.html">Data Science</a>
+        <a class="seg-btn" href="../webdev.html">Web Dev<small>soon</small></a>
+      </div>
+      <a class="btn-cv" href="../docs/cv.pdf">CV</a>
+    </nav>
+  </div>
+</header>
+<section class="detail-hero">
+  <div class="wrap">
+    <p class="eyebrow">// NPEC · 2024</p>
+    <h1>ATHENA: MLOps for Plant Science</h1>
+    <p class="subtitle">Deploying AI models for plant science with cloud integration</p>
+    <p class="summary">I turned machine learning models from research code into production-ready services for ATHENA, a Python package and cloud application that segments plant organs and detects landmarks in high-resolution images for researchers at the Netherlands Plant Eco-phenotyping Centre.</p>
+    <div class="cta-row"><a class="btn btn-primary" href="https://github.com/DominikSzewczyk224180/Projects-2023-2024" target="_blank" rel="noopener">View on GitHub →</a></div>
+    <div class="meta"><div><span class="k">My role</span><span class="v">MLOps engineer</span></div><div><span class="k">Duration</span><span class="v">Apr to Jul 2024</span></div><div><span class="k">Partner</span><span class="v">NPEC</span></div><div><span class="k">Stack</span><span class="v">Azure, Docker, FastAPI</span></div></div>
+  </div>
+</section>
+<section class="section"><div class="wrap reveal"><div class="sec-label"><span>01 / overview</span><i></i></div><div class="prose"><p>ATHENA enables precise organ segmentation and landmark detection on high-resolution plant images. It processes new data, trains models, and predicts plant organs, returning a heatmap of the model's confidence for each pixel. My role was to take the underlying models from research code to a reliable, deployable application.</p></div></div></section>
+<section class="section section-alt"><div class="wrap reveal"><div class="sec-label"><span>02 / MLOps integration</span><i></i></div><div class="prose"><ul><li>Built robust, modular code with documentation, logging, and unit testing.</li><li>Set up data ingestion and model training pipelines on Microsoft Azure with versioned data assets.</li><li>Designed an Azure deployment with APIs for inference and training, packaged in Docker containers.</li><li>Added continuous monitoring of prediction accuracy with a path to retraining.</li><li>Built FastAPI services and a custom command-line interface to manage the pipelines.</li></ul></div></div></section>
+<section class="section"><div class="wrap reveal"><div class="sec-label"><span>03 / live demo</span><i></i></div><div class="prose" style="margin-bottom:22px"><p>A short walkthrough of the deployed ATHENA application, from prediction review to analysis.</p></div><div class="video-wrap"><video controls preload="none" poster="../assets/img/npec1.jpg"><source src="../assets/img/athena_demo.mp4" type="video/mp4"></video></div></div></section>
+<section class="section section-alt"><div class="wrap reveal"><div class="sec-label"><span>04 / in the app</span><i></i></div><div class="imgrid"><figure><img src="../assets/img/npec1.jpg" alt="Predictions review"><figcaption>Predictions review</figcaption></figure><figure><img src="../assets/img/npec2.jpg" alt="Segmentation overlay"><figcaption>Segmentation overlay</figcaption></figure><figure><img src="../assets/img/npec3.jpg" alt="Analysis view"><figcaption>Analysis view</figcaption></figure></div></div></section>
+<section class="section"><div class="wrap reveal"><div class="sec-label"><span>05 / tech</span><i></i></div><div class="stack"><span class="chip">Python</span><span class="chip">Microsoft Azure</span><span class="chip">Azure ML</span><span class="chip">Docker</span><span class="chip">FastAPI</span><span class="chip">CI/CD</span><span class="chip">Sphinx</span><span class="chip">Custom CLI</span><span class="chip">Data engineering</span></div></div></section>
+<footer>
+  <div class="wrap foot">
+    <a class="back" href="../index.html#projects">&larr; Back to all projects</a>
+    <span>Designed and built from scratch &middot; HTML &middot; CSS &middot; JS</span>
+  </div>
+</footer>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

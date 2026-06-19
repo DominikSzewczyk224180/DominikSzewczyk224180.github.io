@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI-Powered 3D Digital Twin and Object Removal | Dominik Szewczyk</title>
+<meta name="description" content="Research into automating 3D urban reconstruction with semantic segmentation, generative object removal, and Neural Radiance Fields.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body><header>
+  <div class="wrap nav">
+    <a class="logo" href="../index.html">Dominik<span>.</span></a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav-menu">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#contact">Contact</a>
+      <div class="seg">
+        <a class="seg-btn active" href="../index.html">Data Science</a>
+        <a class="seg-btn" href="../webdev.html">Web Dev<small>soon</small></a>
+      </div>
+      <a class="btn-cv" href="../docs/cv.pdf">CV</a>
+    </nav>
+  </div>
+</header>
+<section class="detail-hero">
+  <div class="wrap">
+    <p class="eyebrow">// Antea Group and Kavel 10 · 2024 to 2025</p>
+    <h1>AI-Powered 3D Digital Twin and Object Removal</h1>
+    <p class="subtitle">Automating 3D urban modelling with AI</p>
+    <p class="summary">A research project into AI methods for reconstructing urban environments from aerial and drone imagery. We combined semantic segmentation, generative object removal, and Neural Radiance Fields to improve 3D mesh quality for urban planning.</p>
+    <div class="cta-row"><a class="btn btn-primary" href="https://github.com/DominikSzewczyk224180/Antea-2024-2025" target="_blank" rel="noopener">View on GitHub →</a></div>
+    <div class="meta"><div><span class="k">My role</span><span class="v">ML researcher</span></div><div><span class="k">Duration</span><span class="v">Sep 2024 to Feb 2025</span></div><div><span class="k">Client</span><span class="v">Antea Group, Kavel 10</span></div><div><span class="k">Focus</span><span class="v">Computer Vision, NeRF, 3D</span></div></div>
+  </div>
+</section>
+<section class="section"><div class="wrap reveal"><div class="sec-label"><span>01 / overview</span><i></i></div><div class="prose"><p>Our team researched how to automate the reconstruction of urban environments. The work involved custom machine learning pipelines for object removal, semantic segmentation to detect and isolate structures, and NeRF for high-fidelity 3D visualisation, all aimed at improving 3D meshes built from aerial imagery.</p></div></div></section>
+<section class="section section-alt"><div class="wrap reveal"><div class="sec-label"><span>02 / image inpainting and segmentation</span><i></i></div><div class="prose"><ul><li>Tested and compared DeepFill v2, LaMa, and PowerPaint for object removal on client data.</li><li>Built a custom pipeline with a CLI so users can preprocess data, adjust model parameters, and train segmentation models.</li><li>Trained a semantic segmentation model to detect and isolate trees, ready for AI-powered object removal.</li><li>Evaluated U-Net, DeepLabV3, and FCN on accuracy and IoU, selecting FCN as the most effective.</li></ul></div></div></section>
+<section class="section"><div class="wrap reveal"><div class="sec-label"><span>03 / 3D reconstruction and NeRF</span><i></i></div><div class="prose"><ul><li>Used Instant NeRF to generate 3D visualisations from short drone video sequences.</li><li>Created, refined, and optimised point clouds in NeRF Studio for 3D mesh generation.</li><li>Cleaned point clouds and produced detailed meshes with improved visual fidelity.</li><li>Built a VR environment in Unreal Engine for immersive exploration of the reconstructed areas.</li></ul></div></div></section>
+<section class="section section-alt"><div class="wrap reveal"><div class="sec-label"><span>04 / deliverables</span><i></i></div><div class="prose"><p>The project ended with reports on data quality, project lifecycle, and model recommendations, including a NeRF implementation guide, plus a CLI for data preparation and training. We presented the findings to mentors, peers, and the client at a final conference.</p></div></div></section>
+<section class="section"><div class="wrap reveal"><div class="sec-label"><span>05 / tech</span><i></i></div><div class="stack"><span class="chip">Python</span><span class="chip">FCN / U-Net / DeepLabV3</span><span class="chip">Instant NeRF</span><span class="chip">NeRF Studio</span><span class="chip">Unreal Engine</span><span class="chip">ML pipelines</span><span class="chip">CLI development</span></div></div></section>
+<footer>
+  <div class="wrap foot">
+    <a class="back" href="../index.html#projects">&larr; Back to all projects</a>
+    <span>Designed and built from scratch &middot; HTML &middot; CSS &middot; JS</span>
+  </div>
+</footer>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

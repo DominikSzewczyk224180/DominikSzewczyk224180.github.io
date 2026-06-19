@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Intelligent Pickup Prediction System | Dominik Szewczyk</title>
+<meta name="description" content="A multi-model machine learning system, with a Streamlit dashboard, that forecasts unexpected pickups for a logistics company and cuts distance, cost, and emissions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body><header>
+  <div class="wrap nav">
+    <a class="logo" href="../index.html">Dominik<span>.</span></a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav-menu">
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#projects">Projects</a>
+      <a href="../index.html#contact">Contact</a>
+      <div class="seg">
+        <a class="seg-btn active" href="../index.html">Data Science</a>
+        <a class="seg-btn" href="../webdev.html">Web Dev<small>soon</small></a>
+      </div>
+      <a class="btn-cv" href="../docs/cv.pdf">CV</a>
+    </nav>
+  </div>
+</header>
+<section class="detail-hero">
+  <div class="wrap">
+    <p class="eyebrow">// De Rooy Transport · internship · 2025</p>
+    <h1>Intelligent Pickup Prediction System</h1>
+    <p class="subtitle">A machine learning solution for logistics optimisation</p>
+    <p class="summary">Unexpected pickups make up over 82% of De Rooy&#x27;s daily assignments. I built a multi-model pipeline that forecasts where, when, and how large those pickups will be, wired into a Streamlit dashboard that planners use to cut distance, cost, and CO2.</p>
+    <div class="cta-row"><a class="btn btn-primary" href="https://youtu.be/IJ8YJA15uSc" target="_blank" rel="noopener">Watch the presentation →</a></div>
+    <div class="meta"><div><span class="k">My role</span><span class="v">Data scientist (internship)</span></div><div><span class="k">Duration</span><span class="v">Jan to Jun 2025</span></div><div><span class="k">Company</span><span class="v">De Rooy Transport</span></div><div><span class="k">Stack</span><span class="v">Keras, RF, XGBoost, Streamlit</span></div></div>
+  </div>
+</section>
+<section class="section"><div class="wrap reveal"><div class="sec-label"><span>01 / overview</span><i></i></div><div class="prose"><p>Working with De Rooy Transport, I designed a predictive system for the challenge of unexpected pickups. It uses a multi-model machine learning pipeline to forecast pickup details with high accuracy and integrates with the PTV route-planning software the planners already use.</p></div></div></section>
+<section class="section section-alt"><div class="wrap reveal"><div class="sec-label"><span>02 / the models</span><i></i></div><div class="prose"><p>Each part of the prediction is handled by the model best suited to it:</p><ul><li>Pickup occurrence: a Keras sequential model over 5 km grid cells, reaching 90.2% accuracy, 88.9% precision, and an 86.5% F1-score.</li><li>Exact location: a random forest classifier with a mean distance error of 18 metres and 100% of predictions within 1 km.</li><li>Size and quantity: random forest regressors estimating loading metres and shipment units for route planning.</li><li>Insertion time: an XGBoost regressor that brought the mean error down to about one hour, improving schedule integration.</li><li>Feature engineering: spatial, temporal, and holiday features that made the models more robust during peak periods.</li></ul></div></div></section>
+<section class="section"><div class="wrap reveal"><div class="metrics"><div class="metric"><div class="num">90.2<span class="accent">%</span></div><span class="lbl">occurrence accuracy</span></div><div class="metric"><div class="num">18 m</div><span class="lbl">location error</span></div><div class="metric"><div class="num">727 km</div><span class="lbl">saved (sample day)</span></div><div class="metric"><div class="num">945 kg</div><span class="lbl">CO2 saved (sample day)</span></div></div></div></section>
+<section class="section section-alt"><div class="wrap reveal"><blockquote class="quote"><p>Working with Dominik was a fun and valuable experience. He did not just put in the work, he showed that he understands what matters: practical value, smart use of data, and a fresh perspective on how things can be improved. We are very happy with the result and his contribution to De Rooy.</p><cite><b>Nanko Hensen</b>, De Rooy Transport &amp; Logistics</cite></blockquote></div></section>
+<section class="section"><div class="wrap reveal"><div class="sec-label"><span>03 / impact</span><i></i></div><div class="prose"><p>Sample tests in May 2025 showed savings of several hundred kilometres per day, with matching reductions in fuel cost, CO2, and planning time. The system was designed to roll into daily routes from August 2025, with potential daily savings of up to 1,500 km and a clear path to expand across the wider Benelux network.</p></div></div></section>
+<section class="section section-alt"><div class="wrap reveal"><div class="sec-label"><span>04 / tech</span><i></i></div><div class="stack"><span class="chip">Python</span><span class="chip">Keras</span><span class="chip">Random Forest</span><span class="chip">XGBoost</span><span class="chip">Streamlit</span><span class="chip">PTV integration</span><span class="chip">pandas / numpy</span><span class="chip">Exploratory data analysis</span></div></div></section>
+<footer>
+  <div class="wrap foot">
+    <a class="back" href="../index.html#projects">&larr; Back to all projects</a>
+    <span>Designed and built from scratch &middot; HTML &middot; CSS &middot; JS</span>
+  </div>
+</footer>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
