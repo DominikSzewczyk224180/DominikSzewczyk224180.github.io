@@ -1,5 +1,439 @@
----
-layout: home
-title: My portfolio
-subtitle: Take a look at my recent projects for insights into what I’ve been working on. 
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dominik Szewczyk — Data Science & AI</title>
+<meta name="description" content="Dominik Szewczyk — third-year Data Science & AI student turning real-world data into models that ship. Projects with Banijay, NPEC, Antea Group and De Rooy Transport.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#16181D;
+    --ink-soft:#3A3E47;
+    --muted:#767B85;
+    --line:#E1E3DA;
+    --canvas:#F3F4EF;
+    --canvas-2:#ECEEE6;
+    --card:#FFFFFF;
+    --accent:#2B44FF;
+    --accent-ink:#1B2BB8;
+    --font-display:'Space Grotesk','Segoe UI',system-ui,sans-serif;
+    --font-body:'IBM Plex Sans',system-ui,-apple-system,sans-serif;
+    --font-mono:'IBM Plex Mono',ui-monospace,'SF Mono',Menlo,monospace;
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--font-body);
+    background:var(--canvas);
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--accent);color:#fff}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .mono{font-family:var(--font-mono);font-size:.78rem;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+  .accent{color:var(--accent)}
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(243,244,239,.82);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .logo{font-family:var(--font-display);font-weight:700;font-size:1.15rem;letter-spacing:-.01em}
+  .logo b{color:var(--accent)}
+  .nav-links{display:flex;align-items:center;gap:30px}
+  .nav-links a{font-size:.92rem;color:var(--ink-soft);transition:color .2s}
+  .nav-links a:hover{color:var(--accent)}
+  .toggle{
+    display:inline-flex;border:1px solid var(--line);border-radius:999px;
+    padding:3px;background:var(--card);gap:2px;
+  }
+  .toggle a{
+    font-family:var(--font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;
+    padding:6px 12px;border-radius:999px;color:var(--muted);display:flex;align-items:center;gap:6px;
+  }
+  .toggle a.active{background:var(--ink);color:#fff}
+  .toggle .soon{font-size:.6rem;opacity:.6}
+  .cv-btn{
+    font-family:var(--font-mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.04em;
+    border:1px solid var(--ink);padding:9px 16px;border-radius:6px;transition:all .2s;
+  }
+  .cv-btn:hover{background:var(--ink);color:#fff}
+  .menu-btn{display:none;background:none;border:0;cursor:pointer;font-size:1.5rem;color:var(--ink)}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;padding:72px 0 80px}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+  .eyebrow{margin-bottom:22px}
+  h1{
+    font-family:var(--font-display);font-weight:700;
+    font-size:clamp(2.6rem,6vw,4.6rem);line-height:1.02;letter-spacing:-.025em;
+    margin-bottom:18px;
+  }
+  .rotator{color:var(--accent);display:inline-block;min-height:1em}
+  .lead{font-size:1.18rem;color:var(--ink-soft);max-width:30ch;margin-bottom:34px}
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  .btn{
+    font-family:var(--font-mono);font-size:.82rem;text-transform:uppercase;letter-spacing:.04em;
+    padding:14px 22px;border-radius:8px;transition:all .2s;border:1px solid transparent;display:inline-flex;align-items:center;gap:8px;
+  }
+  .btn-primary{background:var(--accent);color:#fff}
+  .btn-primary:hover{background:var(--accent-ink);transform:translateY(-2px)}
+  .btn-ghost{border-color:var(--ink);color:var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:#fff}
+
+  .hero-visual{position:relative}
+  .plot-card{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:18px;box-shadow:0 24px 60px -34px rgba(22,24,29,.35);
+  }
+  .plot-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+  canvas#plot{width:100%;height:230px;display:block;border-radius:8px}
+  .portrait{
+    position:absolute;right:-10px;bottom:-26px;width:128px;height:128px;border-radius:50%;
+    object-fit:cover;border:4px solid var(--canvas);box-shadow:0 14px 30px -12px rgba(22,24,29,.4);
+  }
+
+  /* ---------- SECTION SHELL ---------- */
+  section{padding:88px 0}
+  .sec-label{display:flex;align-items:center;gap:14px;margin-bottom:38px}
+  .sec-label .bar{height:1px;flex:1;background:var(--line)}
+  h2{font-family:var(--font-display);font-weight:600;font-size:clamp(1.7rem,3.5vw,2.4rem);letter-spacing:-.02em}
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{display:grid;grid-template-columns:1.4fr .9fr;gap:56px;align-items:start}
+  .about-grid p{font-size:1.08rem;color:var(--ink-soft);margin-bottom:18px;max-width:54ch}
+  .facts{border-left:2px solid var(--accent);padding-left:20px}
+  .facts .row{margin-bottom:18px}
+  .facts .k{font-family:var(--font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);display:block;margin-bottom:3px}
+  .facts .v{font-weight:500}
+  .orgs{margin-top:42px;border-top:1px solid var(--line);padding-top:26px}
+  .orgs .mono{margin-bottom:16px;display:block}
+  .org-chips{display:flex;flex-wrap:wrap;gap:10px}
+  .chip{font-family:var(--font-mono);font-size:.8rem;border:1px solid var(--line);background:var(--card);padding:7px 13px;border-radius:6px;color:var(--ink-soft)}
+
+  /* ---------- SKILLS ---------- */
+  #skills{background:var(--canvas-2)}
+  .skill-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  .skill-col h3{font-family:var(--font-mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;color:var(--accent);margin-bottom:16px;font-weight:500}
+  .skill-col ul{list-style:none}
+  .skill-col li{padding:8px 0;border-bottom:1px dashed var(--line);font-size:.96rem;color:var(--ink-soft)}
+
+  /* ---------- PROJECTS ---------- */
+  .proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+    display:flex;flex-direction:column;transition:transform .25s, box-shadow .25s, border-color .25s;
+  }
+  .card:hover{transform:translateY(-5px);box-shadow:0 30px 60px -38px rgba(22,24,29,.5);border-color:var(--accent)}
+  .card .thumb{height:190px;background:var(--canvas-2);display:flex;align-items:center;justify-content:center;overflow:hidden;border-bottom:1px solid var(--line)}
+  .card .thumb img{width:100%;height:100%;object-fit:cover}
+  .card .body{padding:22px 22px 24px;display:flex;flex-direction:column;flex:1}
+  .card .org{font-family:var(--font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--accent);margin-bottom:8px}
+  .card h3{font-family:var(--font-display);font-weight:600;font-size:1.22rem;letter-spacing:-.01em;margin-bottom:10px;line-height:1.25}
+  .card p{font-size:.94rem;color:var(--ink-soft);margin-bottom:16px;flex:1}
+  .tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px}
+  .tag{font-family:var(--font-mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.03em;color:var(--muted);background:var(--canvas);border:1px solid var(--line);padding:4px 9px;border-radius:5px}
+  .more{font-family:var(--font-mono);font-size:.8rem;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);display:inline-flex;align-items:center;gap:7px;transition:gap .2s,color .2s}
+  .card:hover .more{color:var(--accent);gap:12px}
+
+  /* ---------- CONTACT ---------- */
+  #contact{background:var(--ink);color:var(--canvas)}
+  #contact h2{color:#fff}
+  #contact .sec-label .bar{background:rgba(255,255,255,.18)}
+  #contact .mono{color:rgba(255,255,255,.5)}
+  .contact-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}
+  .contact-grid .big{font-family:var(--font-display);font-weight:600;font-size:clamp(1.8rem,4vw,2.8rem);letter-spacing:-.02em;line-height:1.1;color:#fff;margin-bottom:24px}
+  .contact-links{display:flex;flex-direction:column;gap:2px}
+  .contact-links a{display:flex;justify-content:space-between;align-items:center;padding:18px 4px;border-bottom:1px solid rgba(255,255,255,.14);transition:padding .2s,color .2s}
+  .contact-links a:hover{padding-left:14px;color:#fff}
+  .contact-links .lbl{font-family:var(--font-mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;color:rgba(255,255,255,.5)}
+  .contact-links .val{font-size:1.02rem}
+  .contact-links a:hover .val{color:var(--accent)}
+
+  footer{background:var(--ink);color:rgba(255,255,255,.45);border-top:1px solid rgba(255,255,255,.1);padding:26px 0}
+  .foot{display:flex;justify-content:space-between;align-items:center;font-family:var(--font-mono);font-size:.76rem}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:880px){
+    .nav-links{display:none}
+    .menu-btn{display:block}
+    .hero-grid{grid-template-columns:1fr;gap:54px}
+    .hero-visual{order:-1}
+    .about-grid,.contact-grid{grid-template-columns:1fr;gap:36px}
+    .skill-grid{grid-template-columns:repeat(2,1fr)}
+    .proj-grid{grid-template-columns:1fr}
+    .portrait{width:96px;height:96px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *{scroll-behavior:auto !important}
+    .reveal{opacity:1;transform:none;transition:none}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo">Dominik<b>.</b></a>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <div class="toggle">
+        <a href="#" class="active">DS</a>
+        <a href="webdev.html">Web Dev <span class="soon">soon</span></a>
+      </div>
+      <a href="cv/CV_Dominik_Szewczyk.pdf" class="cv-btn">CV ↓</a>
+    </nav>
+    <button class="menu-btn" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow mono">// data science · ai · breda university</div>
+      <h1>Dominik Szewczyk,<br><span class="rotator">Data Scientist</span></h1>
+      <p class="lead">Third-year Data Science &amp; AI student turning messy, real-world data into models that actually ship.</p>
+      <div class="cta-row">
+        <a href="#projects" class="btn btn-primary">View projects →</a>
+        <a href="cv/CV_Dominik_Szewczyk.pdf" class="btn btn-ghost">Download CV</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="plot-card">
+        <div class="plot-head">
+          <span class="mono">fig.1 — prediction</span>
+          <span class="mono accent">R² 0.94</span>
+        </div>
+        <canvas id="plot"></canvas>
+      </div>
+      <img class="portrait" src="https://dominikszewczyk224180.github.io/assets/img/profile.jpg" alt="Dominik Szewczyk">
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-label"><span class="mono">01 — about</span><span class="bar"></span></div>
+    <div class="about-grid reveal">
+      <div>
+        <p>I'm Dominik — a third-year Data Science &amp; AI student at Breda University of Applied Sciences (BUas). I like the messy part of the job: taking raw, real-world data and turning it into something a business can actually use — a forecast, a dashboard, a model in production.</p>
+        <p>Over the past two years I've worked on real projects with companies and research institutions across the Netherlands: from emotion analysis in video and 3D digital twins, to logistics prediction and deploying ML models to the cloud.</p>
+        <div class="orgs">
+          <span class="mono">// collaborated with</span>
+          <div class="org-chips">
+            <span class="chip">Banijay</span>
+            <span class="chip">NPEC</span>
+            <span class="chip">Antea Group</span>
+            <span class="chip">Kavel 10</span>
+            <span class="chip">De Rooy Transport</span>
+            <span class="chip">Municipality of Breda</span>
+          </div>
+        </div>
+      </div>
+      <div class="facts">
+        <div class="row"><span class="k">Location</span><span class="v">Breda, Netherlands</span></div>
+        <div class="row"><span class="k">Focus</span><span class="v">ML · MLOps · Computer Vision · NLP</span></div>
+        <div class="row"><span class="k">Status</span><span class="v">Open to internships &amp; junior roles</span></div>
+        <div class="row"><span class="k">Year</span><span class="v">3rd year · BUas</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-label"><span class="mono">02 — skills</span><span class="bar"></span></div>
+    <div class="skill-grid reveal">
+      <div class="skill-col">
+        <h3>Languages &amp; Data</h3>
+        <ul><li>Python</li><li>SQL</li><li>Pandas / NumPy</li><li>Power BI</li></ul>
+      </div>
+      <div class="skill-col">
+        <h3>ML &amp; Deep Learning</h3>
+        <ul><li>scikit-learn</li><li>PyTorch / TensorFlow</li><li>NLP / Transformers</li><li>Computer Vision / NeRF</li></ul>
+      </div>
+      <div class="skill-col">
+        <h3>MLOps &amp; Cloud</h3>
+        <ul><li>Docker</li><li>Microsoft Azure</li><li>CI/CD</li><li>MLflow</li></ul>
+      </div>
+      <div class="skill-col">
+        <h3>Tools &amp; Apps</h3>
+        <ul><li>Git / GitHub</li><li>Streamlit</li><li>Jupyter</li><li>Linux</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-label"><span class="mono">03 — selected projects</span><span class="bar"></span></div>
+    <div class="proj-grid reveal">
+
+      <a class="card" href="projects/de-rooy.html">
+        <div class="thumb"><img src="https://dominikszewczyk224180.github.io/assets/img/derooy_logo.png" alt="De Rooy Transport"></div>
+        <div class="body">
+          <div class="org">De Rooy Transport · internship</div>
+          <h3>Intelligent Pickup Prediction System</h3>
+          <p>An ML system that forecasts unexpected pickups — location, size and timing — paired with a Streamlit dashboard to cut operational cost and emissions.</p>
+          <div class="tags"><span class="tag">Machine Learning</span><span class="tag">Predictive Analytics</span><span class="tag">Streamlit</span></div>
+          <span class="more">Read more →</span>
+        </div>
+      </a>
+
+      <a class="card" href="projects/antea.html">
+        <div class="thumb"><img src="https://dominikszewczyk224180.github.io/assets/img/antea_project_thumbnail.png" alt="Antea Group"></div>
+        <div class="body">
+          <div class="org">Antea Group &amp; Kavel 10</div>
+          <h3>AI-Powered 3D Digital Twin &amp; Object Removal</h3>
+          <p>Semantic segmentation, generative object removal and Neural Radiance Fields (NeRF) to automate 3D urban modeling and digital-twin generation.</p>
+          <div class="tags"><span class="tag">Computer Vision</span><span class="tag">3D Reconstruction</span><span class="tag">NeRF</span></div>
+          <span class="more">Read more →</span>
+        </div>
+      </a>
+
+      <a class="card" href="projects/npec.html">
+        <div class="thumb"><img src="https://dominikszewczyk224180.github.io/assets/img/npec_mlops_presentation1.png" alt="NPEC"></div>
+        <div class="body">
+          <div class="org">NPEC · plant eco-phenotyping</div>
+          <h3>MLOps: Deploying AI for Plant Science</h3>
+          <p>Turning research ML models into production-ready, cloud-deployed services for plant science — the full path from notebook to operations.</p>
+          <div class="tags"><span class="tag">MLOps</span><span class="tag">Azure</span><span class="tag">Docker</span></div>
+          <span class="more">Read more →</span>
+        </div>
+      </a>
+
+      <a class="card" href="projects/banijay.html">
+        <div class="thumb"><img src="https://dominikszewczyk224180.github.io/assets/img/banijay_presentation1.png" alt="Banijay"></div>
+        <div class="body">
+          <div class="org">Banijay · media</div>
+          <h3>Emotion Classification with NLP</h3>
+          <p>An emotion-classification system using NLP and transformer models to analyze video content and surface emotional signal at scale.</p>
+          <div class="tags"><span class="tag">NLP</span><span class="tag">Transformers</span><span class="tag">Machine Learning</span></div>
+          <span class="more">Read more →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-label"><span class="mono">04 — contact</span><span class="bar"></span></div>
+    <div class="contact-grid reveal">
+      <div>
+        <div class="big">Let's build something<br>data-driven together.</div>
+        <p style="color:rgba(255,255,255,.6);max-width:40ch">Open to internships, junior data science / ML roles and collaboration. The fastest way to reach me is email or LinkedIn.</p>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:dominikszewczyk123@gmail.com"><span class="lbl">Email</span><span class="val">dominikszewczyk123@gmail.com</span></a>
+        <a href="https://linkedin.com/in/dominik-szewczyk" target="_blank" rel="noopener"><span class="lbl">LinkedIn</span><span class="val">in/dominik-szewczyk →</span></a>
+        <a href="https://github.com/DominikSzewczyk224180" target="_blank" rel="noopener"><span class="lbl">GitHub</span><span class="val">DominikSzewczyk224180 →</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Dominik Szewczyk</span>
+    <span>Built from scratch · HTML · CSS · JS</span>
+  </div>
+</footer>
+
+<script>
+  // Rotating role
+  const roles=["Data Scientist","ML Engineer","AI Builder"];
+  const rot=document.querySelector('.rotator');
+  let ri=0;
+  if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    setInterval(()=>{ri=(ri+1)%roles.length;rot.style.opacity=0;
+      setTimeout(()=>{rot.textContent=roles[ri];rot.style.transition='opacity .3s';rot.style.opacity=1;},300);},2600);
+  }
+
+  // Scroll reveal
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // Hero scatter + regression plot
+  const cv=document.getElementById('plot');
+  const ctx=cv.getContext('2d');
+  function setup(){
+    const dpr=window.devicePixelRatio||1;
+    cv.width=cv.clientWidth*dpr; cv.height=cv.clientHeight*dpr;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+  }
+  setup();
+  const W=()=>cv.clientWidth,H=()=>cv.clientHeight;
+  const N=46, pts=[];
+  function gen(){
+    pts.length=0;
+    for(let i=0;i<N;i++){
+      const x=Math.random();
+      const y=0.82-0.62*x + (Math.random()-0.5)*0.22; // points around a downward trend
+      pts.push({x,y,d:Math.random()});
+    }
+  }
+  gen();
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let t=reduce?1:0;
+  function draw(){
+    const w=W(),h=H(),pad=14;
+    ctx.clearRect(0,0,w,h);
+    // grid
+    ctx.strokeStyle='rgba(118,123,133,.16)';ctx.lineWidth=1;
+    for(let i=0;i<=4;i++){const gy=pad+(h-2*pad)*i/4;ctx.beginPath();ctx.moveTo(pad,gy);ctx.lineTo(w-pad,gy);ctx.stroke();}
+    for(let i=0;i<=5;i++){const gx=pad+(w-2*pad)*i/5;ctx.beginPath();ctx.moveTo(gx,pad);ctx.lineTo(gx,h-pad);ctx.stroke();}
+    // points
+    const ease=t<1?(1-Math.pow(1-t,3)):1;
+    pts.forEach(p=>{
+      const a=Math.min(1,Math.max(0,(ease-p.d)*3));
+      if(a<=0)return;
+      const px=pad+p.x*(w-2*pad), py=pad+p.y*(h-2*pad);
+      ctx.fillStyle='rgba(43,68,255,'+(0.65*a)+')';
+      ctx.beginPath();ctx.arc(px,py,3.1,0,7);ctx.fill();
+    });
+    // regression line (draws after points)
+    const lp=Math.min(1,Math.max(0,(ease-0.55)/0.45));
+    if(lp>0){
+      const x1=pad,y1=pad+0.82*(h-2*pad);
+      const x2=pad+(1)*(w-2*pad),y2=pad+0.20*(h-2*pad);
+      ctx.strokeStyle='#2B44FF';ctx.lineWidth=2.2;
+      ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x1+(x2-x1)*lp,y1+(y2-y1)*lp);ctx.stroke();
+    }
+  }
+  function loop(){if(t<1)t+=0.012; draw(); if(t<1.0001)requestAnimationFrame(loop);}
+  draw(); if(!reduce)requestAnimationFrame(loop);
+  window.addEventListener('resize',()=>{setup();draw();});
+
+  // Mobile menu (simple)
+  document.querySelector('.menu-btn').addEventListener('click',()=>{
+    const n=document.querySelector('.nav-links');
+    const open=n.style.display==='flex';
+    n.style.display=open?'':'flex';
+    if(!open){n.style.position='absolute';n.style.top='68px';n.style.right='24px';n.style.flexDirection='column';n.style.background='var(--card)';n.style.padding='18px 22px';n.style.borderRadius='12px';n.style.border='1px solid var(--line)';n.style.gap='16px';n.style.boxShadow='0 20px 40px -20px rgba(0,0,0,.3)';}
+  });
+</script>
+</body>
+</html>
