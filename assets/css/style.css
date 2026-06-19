@@ -350,3 +350,41 @@ footer{background:var(--ink);color:rgba(255,255,255,.45);border-top:1px solid rg
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 @media(max-width:880px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.svc-grid{grid-template-columns:1fr}}
+
+/* ---- Web Dev: language switch (header) ---- */
+.lang-btn{
+  margin-left:auto;margin-right:16px;display:inline-flex;align-items:center;gap:8px;cursor:pointer;
+  font-family:var(--font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);
+  background:var(--card);border:1px solid var(--line);padding:6px 12px;border-radius:999px;
+  transition:border-color .2s,transform .2s,box-shadow .2s;
+}
+.lang-btn:hover{border-color:var(--accent);transform:translateY(-1px);box-shadow:0 8px 18px -12px rgba(21,23,28,.5)}
+.lang-btn .flag{width:20px;height:13px;border-radius:2px;overflow:hidden;display:block;flex:0 0 auto;border:1px solid rgba(21,23,28,.12)}
+.lang-btn .flag svg{display:block;width:100%;height:100%}
+.lang-btn .lang-label{line-height:1}
+@media(max-width:380px){.lang-btn{margin-right:10px;padding:6px 9px}.lang-btn .lang-label{display:none}}
+
+/* ---- Web Dev: rotating word (own class so shared main.js leaves it alone) ---- */
+.role .rotate-w{color:var(--accent);border-bottom:3px solid var(--accent-soft)}
+
+/* ---- Web Dev: mini site previews inside project card thumbs ---- */
+.card-thumb .mini{position:absolute;inset:0;display:flex;flex-direction:column;background:#fff}
+.mini-bar{flex:0 0 24px;background:#15171c;display:flex;align-items:center;gap:5px;padding:0 9px}
+.mini-bar i{width:6px;height:6px;border-radius:50%;background:#3a3e47;flex:0 0 auto}
+.mini-bar span{margin-left:7px;font-family:var(--font-mono);font-size:.58rem;color:#8b919b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mini-view{position:relative;flex:1;background:var(--mbg);color:var(--mfg);padding:13px 16px 15px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+.mini-top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.mini-logo{font-family:var(--font-display);font-weight:700;font-size:.82rem;letter-spacing:.01em;color:var(--mfg);white-space:nowrap}
+.mini-logo b{color:var(--mac)}
+.mini-menu{display:flex;gap:5px;flex:0 0 auto}
+.mini-menu i{width:12px;height:3px;border-radius:2px;background:currentColor;opacity:.32}
+.mini-mid{display:flex;flex-direction:column;gap:9px}
+.mini-h{font-family:var(--font-display);font-weight:600;font-size:1.05rem;line-height:1.14;letter-spacing:-.01em;max-width:82%}
+.mini-h b{color:var(--mac)}
+.mini-row{display:flex;align-items:center;gap:8px}
+.mini-btn{font-family:var(--font-mono);font-size:.56rem;text-transform:uppercase;letter-spacing:.05em;background:var(--mac);color:var(--macfg,#fff);padding:5px 10px;border-radius:5px;white-space:nowrap}
+.mini-ghost{font-family:var(--font-mono);font-size:.56rem;text-transform:uppercase;letter-spacing:.05em;color:var(--mfg);opacity:.8;border:1px solid currentColor;padding:4px 10px;border-radius:5px;white-space:nowrap}
+.card-thumb .mini-open{position:absolute;inset:0;z-index:4;display:flex;align-items:center;justify-content:center;background:rgba(11,13,18,.52);color:#fff;font-family:var(--font-mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;opacity:0;transition:opacity .25s}
+.card-thumb .mini-open::after{content:"\2197";margin-left:7px;font-size:.9rem}
+.card:hover .card-thumb .mini-open{opacity:1}
+@media(prefers-reduced-motion:reduce){.card-thumb .mini-open{transition:none}}

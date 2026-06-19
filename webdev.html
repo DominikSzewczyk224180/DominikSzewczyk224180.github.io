@@ -13,12 +13,17 @@
 <body><header>
   <div class="wrap nav">
     <a class="logo" href="index.html">Dominik<span>.</span></a>
+    <button class="lang-btn" id="langBtn" type="button" aria-label="Przelacz na polski">
+      <span class="flag flag-pl" aria-hidden="true"><svg viewBox="0 0 5 3" preserveAspectRatio="none"><rect width="5" height="1.5" fill="#fff"></rect><rect y="1.5" width="5" height="1.5" fill="#dc143c"></rect></svg></span>
+      <span class="flag flag-gb" aria-hidden="true" hidden><svg viewBox="0 0 60 30" preserveAspectRatio="none"><clipPath id="ujflag"><rect width="60" height="30"></rect></clipPath><g clip-path="url(#ujflag)"><rect width="60" height="30" fill="#012169"></rect><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"></path><path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="3.5"></path><path d="M30,0 V30 M0,15 H60" stroke="#fff" stroke-width="10"></path><path d="M30,0 V30 M0,15 H60" stroke="#C8102E" stroke-width="6"></path></g></svg></span>
+      <span class="lang-label">Polski</span>
+    </button>
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav class="nav-menu">
-      <a href="#services">Services</a>
-      <a href="#work">Work</a>
-      <a href="#stack">Built with</a>
-      <a href="#contact">Contact</a>
+      <a href="#services" data-pl="Usługi">Services</a>
+      <a href="#work" data-pl="Realizacje">Work</a>
+      <a href="#stack" data-pl="Technologie">Built with</a>
+      <a href="#contact" data-pl="Kontakt">Contact</a>
       <div class="seg">
         <a class="seg-btn" href="index.html">Data Science</a>
         <a class="seg-btn active" href="webdev.html">Web Dev</a>
@@ -31,18 +36,18 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="hero-text">
-      <p class="eyebrow">// web development</p>
-      <h1>Websites, built end to end</h1>
-      <p class="role">I build <span class="rotate" data-words="company websites|online stores|booking tools|admin panels">company websites</span>, then put them online for you.</p>
-      <p class="lead">I take a website from the first idea to a live, fast, mobile-friendly site. Design, clean code, hosting, Google, and a simple panel so you can update it yourself.</p>
+      <p class="eyebrow" data-pl="// tworzenie stron www">// web development</p>
+      <h1 data-pl="Strony internetowe, robione od A do Z">Websites, built end to end</h1>
+      <p class="role"><span data-pl="Tworzę ">I build </span><span class="rotate-w" data-words-en="company websites|online stores|booking tools|admin panels" data-words-pl="strony firmowe|sklepy internetowe|systemy rezerwacji|panele administracyjne">company websites</span><span data-pl=", a potem uruchamiam je dla Ciebie online.">, then put them online for you.</span></p>
+      <p class="lead" data-pl="Prowadzę stronę od pierwszego pomysłu aż po szybki, dobrze działający na telefonie serwis online. Projekt, czysty kod, hosting, Google i prosty panel, w którym sam ją zaktualizujesz.">I take a website from the first idea to a live, fast, mobile-friendly site. Design, clean code, hosting, Google, and a simple panel so you can update it yourself.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="#work">View work &rarr;</a>
-        <a class="btn btn-ghost" href="#contact">Get in touch</a>
+        <a class="btn btn-primary" href="#work" data-pl="Zobacz realizacje &rarr;">View work &rarr;</a>
+        <a class="btn btn-ghost" href="#contact" data-pl="Napisz do mnie">Get in touch</a>
       </div>
       <div class="hero-stats">
-        <div class="stat"><span class="n">8</span><span class="l">client sites live</span></div>
-        <div class="stat"><span class="n">From scratch</span><span class="l">no templates</span></div>
-        <div class="stat"><span class="n">End to end</span><span class="l">design to hosting</span></div>
+        <div class="stat"><span class="n">8</span><span class="l" data-pl="stron klientów online">client sites live</span></div>
+        <div class="stat"><span class="n" data-pl="Od zera">From scratch</span><span class="l" data-pl="bez szablonów">no templates</span></div>
+        <div class="stat"><span class="n" data-pl="Od A do Z">End to end</span><span class="l" data-pl="projekt po hosting">design to hosting</span></div>
       </div>
     </div>
     <div class="hero-photo">
@@ -55,38 +60,38 @@
 
 <section id="services" class="section">
   <div class="wrap reveal">
-    <div class="sec-label"><span>01 / what I build for you</span><i></i></div>
-    <p class="skills-intro">You do not need to know anything technical. Tell me about your business and I take care of the rest, from the first sketch to a site that is live on Google and easy for you to run.</p>
+    <div class="sec-label"><span data-pl="01 / co dla Ciebie zbuduję">01 / what I build for you</span><i></i></div>
+    <p class="skills-intro" data-pl="Nie musisz znać się na technologii. Opowiedz mi o swojej firmie, a resztę biorę na siebie, od pierwszego szkicu po stronę widoczną w Google, którą łatwo prowadzić.">You do not need to know anything technical. Tell me about your business and I take care of the rest, from the first sketch to a site that is live on Google and easy for you to run.</p>
     <div class="svc-grid">
       <div class="tool">
-        <span class="ttag">design + build</span>
-        <h3>A site made for you</h3>
-        <p>I build your website from scratch in clean HTML, CSS, and JavaScript, shaped around what your business actually needs. No bulky page builders, just a fast, tidy site.</p>
+        <span class="ttag" data-pl="projekt + kod">design + build</span>
+        <h3 data-pl="Strona zrobiona pod Ciebie">A site made for you</h3>
+        <p data-pl="Tworzę Twoją stronę od zera w czystym HTML, CSS i JavaScript, dopasowaną do tego, czego naprawdę potrzebuje Twoja firma. Bez ciężkich kreatorów, po prostu szybka i schludna strona.">I build your website from scratch in clean HTML, CSS, and JavaScript, shaped around what your business actually needs. No bulky page builders, just a fast, tidy site.</p>
       </div>
       <div class="tool">
-        <span class="ttag">online</span>
-        <h3>Live on your domain</h3>
-        <p>I sort out hosting and connect everything to your own address, so the site is online, secure, and ready for visitors without you touching a server.</p>
+        <span class="ttag" data-pl="online">online</span>
+        <h3 data-pl="Na Twojej domenie">Live on your domain</h3>
+        <p data-pl="Załatwiam hosting i podłączam wszystko pod Twój własny adres, żeby strona była online, bezpieczna i gotowa na gości, bez dotykania serwera przez Ciebie.">I sort out hosting and connect everything to your own address, so the site is online, secure, and ready for visitors without you touching a server.</p>
       </div>
       <div class="tool">
-        <span class="ttag">google</span>
-        <h3>Found on Google</h3>
-        <p>I set the site up for Google search and Google Maps, with the right titles, descriptions, and structure, so local customers can actually find you.</p>
+        <span class="ttag" data-pl="google">google</span>
+        <h3 data-pl="Widoczność w Google">Found on Google</h3>
+        <p data-pl="Konfiguruję stronę pod wyszukiwarkę Google i Mapy Google, z właściwymi tytułami, opisami i strukturą, żeby lokalni klienci naprawdę Cię znaleźli.">I set the site up for Google search and Google Maps, with the right titles, descriptions, and structure, so local customers can actually find you.</p>
       </div>
       <div class="tool">
-        <span class="ttag">admin panel</span>
-        <h3>Update it yourself</h3>
-        <p>A friendly admin panel where you add news, photos, prices, or offers on your own. No code, and no monthly agency fees just to change a phone number.</p>
+        <span class="ttag" data-pl="panel admina">admin panel</span>
+        <h3 data-pl="Zmieniasz sam">Update it yourself</h3>
+        <p data-pl="Przyjazny panel administracyjny, w którym sam dodasz aktualności, zdjęcia, ceny czy oferty. Bez kodu i bez comiesięcznych opłat dla agencji za zmianę numeru telefonu.">A friendly admin panel where you add news, photos, prices, or offers on your own. No code, and no monthly agency fees just to change a phone number.</p>
       </div>
       <div class="tool">
-        <span class="ttag">newsletter</span>
-        <h3>Stay in touch</h3>
-        <p>An optional newsletter and contact forms, so you can collect enquiries and reach your customers directly from your own site.</p>
+        <span class="ttag" data-pl="newsletter">newsletter</span>
+        <h3 data-pl="Bądź w kontakcie">Stay in touch</h3>
+        <p data-pl="Opcjonalny newsletter i formularze kontaktowe, dzięki którym zbierzesz zapytania i dotrzesz do klientów wprost ze swojej strony.">An optional newsletter and contact forms, so you can collect enquiries and reach your customers directly from your own site.</p>
       </div>
       <div class="tool">
-        <span class="ttag">payments</span>
-        <h3>Take payments online</h3>
-        <p>When you want to sell or take bookings, I can connect online payments and order forms straight into the site.</p>
+        <span class="ttag" data-pl="płatności">payments</span>
+        <h3 data-pl="Płatności online">Take payments online</h3>
+        <p data-pl="Kiedy chcesz sprzedawać lub przyjmować rezerwacje, podłączę płatności online i formularze zamówień prosto na stronie.">When you want to sell or take bookings, I can connect online payments and order forms straight into the site.</p>
       </div>
     </div>
   </div>
@@ -94,95 +99,167 @@
 
 <section id="work" class="section section-alt">
   <div class="wrap reveal">
-    <div class="sec-label"><span>02 / selected work</span><i></i></div>
-    <p class="skills-intro">A few of the live sites I have built and put online for businesses, most of them around the Silesia region in Poland. Each one links to the real site.</p>
+    <div class="sec-label"><span data-pl="02 / wybrane realizacje">02 / selected work</span><i></i></div>
+    <p class="skills-intro" data-pl="Kilka stron, które zbudowałem i uruchomiłem dla firm, w większości z regionu Śląska. Każda prowadzi do prawdziwej strony.">A few of the live sites I have built and put online for businesses, most of them around the Silesia region in Poland. Each one links to the real site.</p>
     <div class="cards">
 
       <a class="card" href="https://pukib.pl/" target="_blank" rel="noopener">
-        <div class="card-thumb noimg"><span class="card-initial">P</span></div>
+        <div class="card-thumb">
+          <div class="mini" style="--mbg:linear-gradient(135deg,#1a1c21,#2a2d35);--mfg:#fff;--mac:#d83a2b;--macfg:#fff">
+            <div class="mini-bar"><i></i><i></i><i></i><span>pukib.pl</span></div>
+            <div class="mini-view">
+              <div class="mini-top"><span class="mini-logo">PUKiB</span><span class="mini-menu"><i></i><i></i><i></i><i></i></span></div>
+              <div class="mini-mid"><div class="mini-h">Kontener pod twój <b>remont</b></div><div class="mini-row"><span class="mini-btn">Zamów</span><span class="mini-ghost">Cennik</span></div></div>
+            </div>
+          </div>
+          <div class="mini-open" data-pl="Otwórz stronę">Visit site</div>
+        </div>
         <div class="card-body">
-          <span class="card-org">Waste containers &middot; Silesia</span>
+          <span class="card-org" data-pl="Kontenery na odpady &middot; Śląsk">Waste containers &middot; Silesia</span>
           <h3>PUKiB</h3>
-          <p>A waste-container rental and disposal company. The site opens with a drone-video intro and has an online order form, a price list, and an admin panel the team uses to keep everything current.</p>
-          <div class="tags"><span class="tag">Order form</span><span class="tag">Admin panel</span><span class="tag">SEO</span></div>
-          <span class="card-more">Visit site &rarr;</span>
+          <p data-pl="Firma wynajmująca kontenery i odbierająca odpady. Strona otwiera się filmem z drona i ma formularz zamówienia online, cennik oraz panel admina, w którym zespół trzyma wszystko na bieżąco.">A waste-container rental and disposal company. The site opens with a drone-video intro and has an online order form, a price list, and an admin panel the team uses to keep everything current.</p>
+          <div class="tags"><span class="tag" data-pl="Zamówienia online">Order form</span><span class="tag" data-pl="Panel admina">Admin panel</span><span class="tag" data-pl="SEO">SEO</span></div>
+          <span class="card-more" data-pl="Zobacz stronę &rarr;">Visit site &rarr;</span>
         </div>
       </a>
 
       <a class="card" href="https://4-rent.com.pl/" target="_blank" rel="noopener">
-        <div class="card-thumb noimg"><span class="card-initial">4</span></div>
+        <div class="card-thumb">
+          <div class="mini" style="--mbg:linear-gradient(135deg,#0e2138,#173251);--mfg:#fff;--mac:#f2a73a;--macfg:#15171c">
+            <div class="mini-bar"><i></i><i></i><i></i><span>4-rent.com.pl</span></div>
+            <div class="mini-view">
+              <div class="mini-top"><span class="mini-logo"><b>4</b>RENT</span><span class="mini-menu"><i></i><i></i><i></i><i></i></span></div>
+              <div class="mini-mid"><div class="mini-h">Wynajem <b>podestów</b> i ładowarek</div><div class="mini-row"><span class="mini-btn">Oferta</span><span class="mini-ghost">Kontakt</span></div></div>
+            </div>
+          </div>
+          <div class="mini-open" data-pl="Otwórz stronę">Visit site</div>
+        </div>
         <div class="card-body">
-          <span class="card-org">Machine rental &middot; Silesia</span>
+          <span class="card-org" data-pl="Wynajem maszyn &middot; Śląsk">Machine rental &middot; Silesia</span>
           <h3>4Rent</h3>
-          <p>A rental company for aerial work platforms and telehandlers. I built a full machine catalogue where every model has its own page with photos, specifications, and a downloadable data sheet.</p>
-          <div class="tags"><span class="tag">Catalogue</span><span class="tag">Spec pages</span><span class="tag">Blog</span></div>
-          <span class="card-more">Visit site &rarr;</span>
+          <p data-pl="Wypożyczalnia podestów ruchomych i ładowarek teleskopowych. Zbudowałem pełny katalog maszyn, w którym każdy model ma własną stronę ze zdjęciami, danymi i kartą do pobrania.">A rental company for aerial work platforms and telehandlers. I built a full machine catalogue where every model has its own page with photos, specifications, and a downloadable data sheet.</p>
+          <div class="tags"><span class="tag" data-pl="Katalog">Catalogue</span><span class="tag" data-pl="Karty produktów">Spec pages</span><span class="tag" data-pl="Blog">Blog</span></div>
+          <span class="card-more" data-pl="Zobacz stronę &rarr;">Visit site &rarr;</span>
         </div>
       </a>
 
       <a class="card" href="https://pracownia-mebla.pl/" target="_blank" rel="noopener">
-        <div class="card-thumb noimg"><span class="card-initial">M</span></div>
+        <div class="card-thumb">
+          <div class="mini" style="--mbg:linear-gradient(135deg,#272320,#3a322b);--mfg:#f2ede5;--mac:#c79f63;--macfg:#1c1813">
+            <div class="mini-bar"><i></i><i></i><i></i><span>pracownia-mebla.pl</span></div>
+            <div class="mini-view">
+              <div class="mini-top"><span class="mini-logo">Pracownia Mebla</span><span class="mini-menu"><i></i><i></i><i></i><i></i></span></div>
+              <div class="mini-mid"><div class="mini-h">Meble, które <b>opowiadają</b> historię</div><div class="mini-row"><span class="mini-btn">Realizacje</span><span class="mini-ghost">Kontakt</span></div></div>
+            </div>
+          </div>
+          <div class="mini-open" data-pl="Otwórz stronę">Visit site</div>
+        </div>
         <div class="card-body">
-          <span class="card-org">Fitted furniture &middot; Rybnik</span>
+          <span class="card-org" data-pl="Meble na wymiar &middot; Rybnik">Fitted furniture &middot; Rybnik</span>
           <h3>Pracownia Mebla</h3>
-          <p>A studio that makes fitted kitchens and custom furniture. The site is built around a gallery of their work, with 3D project examples, Google reviews, and a form for booking a visit.</p>
-          <div class="tags"><span class="tag">Gallery</span><span class="tag">Reviews</span><span class="tag">Booking</span></div>
-          <span class="card-more">Visit site &rarr;</span>
+          <p data-pl="Pracownia, która tworzy kuchnie na wymiar i meble na zamówienie. Strona zbudowana wokół galerii realizacji, z projektami 3D, opiniami z Google i formularzem umówienia wizyty.">A studio that makes fitted kitchens and custom furniture. The site is built around a gallery of their work, with 3D project examples, Google reviews, and a form for booking a visit.</p>
+          <div class="tags"><span class="tag" data-pl="Galeria">Gallery</span><span class="tag" data-pl="Opinie">Reviews</span><span class="tag" data-pl="Rezerwacja">Booking</span></div>
+          <span class="card-more" data-pl="Zobacz stronę &rarr;">Visit site &rarr;</span>
         </div>
       </a>
 
       <a class="card" href="https://vmauto.pl/" target="_blank" rel="noopener">
-        <div class="card-thumb noimg"><span class="card-initial">VM</span></div>
+        <div class="card-thumb">
+          <div class="mini" style="--mbg:linear-gradient(135deg,#0a1628,#13233c);--mfg:#fff;--mac:#3f7bf0;--macfg:#fff">
+            <div class="mini-bar"><i></i><i></i><i></i><span>vmauto.pl</span></div>
+            <div class="mini-view">
+              <div class="mini-top"><span class="mini-logo"><b>VM</b> Auto</span><span class="mini-menu"><i></i><i></i><i></i><i></i></span></div>
+              <div class="mini-mid"><div class="mini-h">Kupujesz <b>bez stresu</b></div><div class="mini-row"><span class="mini-btn">Oferta</span><span class="mini-ghost">Kontakt</span></div></div>
+            </div>
+          </div>
+          <div class="mini-open" data-pl="Otwórz stronę">Visit site</div>
+        </div>
         <div class="card-body">
-          <span class="card-org">Car dealership &middot; Radlin</span>
+          <span class="card-org" data-pl="Komis samochodowy &middot; Radlin">Car dealership &middot; Radlin</span>
           <h3>VM Auto &amp; Caravans</h3>
-          <p>A used-car and camper dealership. The homepage pulls in their latest vehicles automatically, shows verified customer reviews, and has an admin panel for the owner to manage the page.</p>
-          <div class="tags"><span class="tag">Live listings</span><span class="tag">Reviews</span><span class="tag">Admin panel</span></div>
-          <span class="card-more">Visit site &rarr;</span>
+          <p data-pl="Komis samochodów używanych i kamperów. Strona główna sama pobiera najnowsze pojazdy, pokazuje zweryfikowane opinie klientów i ma panel admina dla właściciela.">A used-car and camper dealership. The homepage pulls in their latest vehicles automatically, shows verified customer reviews, and has an admin panel for the owner to manage the page.</p>
+          <div class="tags"><span class="tag" data-pl="Auta na żywo">Live listings</span><span class="tag" data-pl="Opinie">Reviews</span><span class="tag" data-pl="Panel admina">Admin panel</span></div>
+          <span class="card-more" data-pl="Zobacz stronę &rarr;">Visit site &rarr;</span>
         </div>
       </a>
 
       <a class="card" href="https://biuro-kania.pl/" target="_blank" rel="noopener">
-        <div class="card-thumb noimg"><span class="card-initial">K</span></div>
+        <div class="card-thumb">
+          <div class="mini" style="--mbg:linear-gradient(135deg,#f5f7fa,#e7edf3);--mfg:#1c2733;--mac:#1f6f63;--macfg:#fff">
+            <div class="mini-bar"><i></i><i></i><i></i><span>biuro-kania.pl</span></div>
+            <div class="mini-view">
+              <div class="mini-top"><span class="mini-logo">Dagmara Kania</span><span class="mini-menu"><i></i><i></i><i></i><i></i></span></div>
+              <div class="mini-mid"><div class="mini-h">Księgowość i <b>doradztwo</b></div><div class="mini-row"><span class="mini-btn">Kontakt</span><span class="mini-ghost">Usługi</span></div></div>
+            </div>
+          </div>
+          <div class="mini-open" data-pl="Otwórz stronę">Visit site</div>
+        </div>
         <div class="card-body">
-          <span class="card-org">Accounting office &middot; Wodzislaw Slaski</span>
+          <span class="card-org" data-pl="Biuro rachunkowe &middot; Wodzisław Śląski">Accounting office &middot; Wodzisław Śląski</span>
           <h3>Biuro Rachunkowe Kania</h3>
-          <p>A long-running accounting and tax-advisory office. The site lays out their services clearly and has a news section and admin panel, so the office can post updates on tax changes themselves.</p>
-          <div class="tags"><span class="tag">Services</span><span class="tag">News feed</span><span class="tag">Admin panel</span></div>
-          <span class="card-more">Visit site &rarr;</span>
+          <p data-pl="Działające od lat biuro rachunkowe i doradztwo podatkowe. Strona przejrzyście pokazuje usługi i ma sekcję aktualności z panelem admina, więc biuro samo publikuje zmiany w przepisach.">A long-running accounting and tax-advisory office. The site lays out their services clearly and has a news section and admin panel, so the office can post updates on tax changes themselves.</p>
+          <div class="tags"><span class="tag" data-pl="Usługi">Services</span><span class="tag" data-pl="Aktualności">News feed</span><span class="tag" data-pl="Panel admina">Admin panel</span></div>
+          <span class="card-more" data-pl="Zobacz stronę &rarr;">Visit site &rarr;</span>
         </div>
       </a>
 
       <a class="card" href="https://elzet-serwis.pl/" target="_blank" rel="noopener">
-        <div class="card-thumb noimg"><span class="card-initial">E</span></div>
+        <div class="card-thumb">
+          <div class="mini" style="--mbg:linear-gradient(135deg,#191c21,#262a31);--mfg:#fff;--mac:#e23b2e;--macfg:#fff">
+            <div class="mini-bar"><i></i><i></i><i></i><span>elzet-serwis.pl</span></div>
+            <div class="mini-view">
+              <div class="mini-top"><span class="mini-logo">ELZET</span><span class="mini-menu"><i></i><i></i><i></i><i></i></span></div>
+              <div class="mini-mid"><div class="mini-h">Serwis <b>ogumienia</b> i SKP</div><div class="mini-row"><span class="mini-btn">Kontakt</span><span class="mini-ghost">Usługi</span></div></div>
+            </div>
+          </div>
+          <div class="mini-open" data-pl="Otwórz stronę">Visit site</div>
+        </div>
         <div class="card-body">
-          <span class="card-org">Tyre service + inspection &middot; Pszow</span>
+          <span class="card-org" data-pl="Serwis opon + SKP &middot; Pszów">Tyre service + inspection &middot; Pszów</span>
           <h3>Elzet</h3>
-          <p>A tyre service and vehicle inspection station. The site presents their services, opening hours, and location, and makes it easy for drivers nearby to find them and call.</p>
-          <div class="tags"><span class="tag">Local SEO</span><span class="tag">Services</span><span class="tag">Maps</span></div>
-          <span class="card-more">Visit site &rarr;</span>
+          <p data-pl="Serwis opon i stacja kontroli pojazdów. Strona przedstawia usługi, godziny otwarcia i lokalizację, dzięki czemu kierowcy z okolicy łatwo ich znajdą i zadzwonią.">A tyre service and vehicle inspection station. The site presents their services, opening hours, and location, and makes it easy for drivers nearby to find them and call.</p>
+          <div class="tags"><span class="tag" data-pl="Lokalne SEO">Local SEO</span><span class="tag" data-pl="Usługi">Services</span><span class="tag" data-pl="Mapy">Maps</span></div>
+          <span class="card-more" data-pl="Zobacz stronę &rarr;">Visit site &rarr;</span>
         </div>
       </a>
 
       <a class="card" href="https://grass-dan.pl/" target="_blank" rel="noopener">
-        <div class="card-thumb noimg"><span class="card-initial">G</span></div>
+        <div class="card-thumb">
+          <div class="mini" style="--mbg:linear-gradient(135deg,#2e5a39,#467a4f);--mfg:#f3efe6;--mac:#d3a64f;--macfg:#22351f">
+            <div class="mini-bar"><i></i><i></i><i></i><span>grass-dan.pl</span></div>
+            <div class="mini-view">
+              <div class="mini-top"><span class="mini-logo">GRASS-DAN</span><span class="mini-menu"><i></i><i></i><i></i><i></i></span></div>
+              <div class="mini-mid"><div class="mini-h">Usługi <b>terenowe</b> cały rok</div><div class="mini-row"><span class="mini-btn">Kontakt</span><span class="mini-ghost">Usługi</span></div></div>
+            </div>
+          </div>
+          <div class="mini-open" data-pl="Otwórz stronę">Visit site</div>
+        </div>
         <div class="card-body">
-          <span class="card-org">Grounds &amp; greenery &middot; Silesia</span>
+          <span class="card-org" data-pl="Usługi terenowe &middot; Śląsk">Grounds &amp; greenery &middot; Silesia</span>
           <h3>Grass-Dan</h3>
-          <p>A one-page site for a year-round grounds and greenery company that has worked across Silesia since 2016. It presents the full range, from land clearing and mowing to tree felling, snow clearing, and timber transport, with a work gallery and a clear way to make contact.</p>
-          <div class="tags"><span class="tag">One-page</span><span class="tag">Services</span><span class="tag">Gallery</span></div>
-          <span class="card-more">Visit site &rarr;</span>
+          <p data-pl="Strona jednostronicowa całorocznej firmy od usług terenowych, działającej na Śląsku od 2016 roku. Pokazuje pełen zakres, od karczowania i koszenia po wycinkę drzew, odśnieżanie i transport drewna, z galerią realizacji i prostym kontaktem.">A one-page site for a year-round grounds and greenery company that has worked across Silesia since 2016. It presents the full range, from land clearing and mowing to tree felling, snow clearing, and timber transport, with a work gallery and a clear way to make contact.</p>
+          <div class="tags"><span class="tag" data-pl="Jednostronicowa">One-page</span><span class="tag" data-pl="Usługi">Services</span><span class="tag" data-pl="Galeria">Gallery</span></div>
+          <span class="card-more" data-pl="Zobacz stronę &rarr;">Visit site &rarr;</span>
         </div>
       </a>
 
       <a class="card" href="https://forprofi.pl/" target="_blank" rel="noopener">
-        <div class="card-thumb noimg"><span class="card-initial">F</span></div>
+        <div class="card-thumb">
+          <div class="mini" style="--mbg:linear-gradient(135deg,#141210,#201b16);--mfg:#f5f1ec;--mac:#e8731e;--macfg:#fff">
+            <div class="mini-bar"><i></i><i></i><i></i><span>forprofi.pl</span></div>
+            <div class="mini-view">
+              <div class="mini-top"><span class="mini-logo">FOR<b>PROFI</b></span><span class="mini-menu"><i></i><i></i><i></i><i></i></span></div>
+              <div class="mini-mid"><div class="mini-h">Doradztwo dla <b>handlu</b></div><div class="mini-row"><span class="mini-btn">Oferta</span><span class="mini-ghost">Kontakt</span></div></div>
+            </div>
+          </div>
+          <div class="mini-open" data-pl="Otwórz stronę">Visit site</div>
+        </div>
         <div class="card-body">
-          <span class="card-org">Retail management &amp; consulting</span>
+          <span class="card-org" data-pl="Zarządzanie i doradztwo w handlu">Retail management &amp; consulting</span>
           <h3>ForProfi</h3>
-          <p>A one-page site for a retail consultant who helps shop owners and franchise networks run, sell, and grow better. Built from scratch with a bold dark layout, an orange accent, and the key numbers front and centre.</p>
-          <div class="tags"><span class="tag">One-page</span><span class="tag">Consulting</span><span class="tag">Custom build</span></div>
-          <span class="card-more">Visit site &rarr;</span>
+          <p data-pl="Strona jednostronicowa doradcy w handlu detalicznym, który pomaga właścicielom sklepów i sieciom franczyzowym lepiej działać, sprzedawać i rosnąć. Zbudowana od zera, z mocnym ciemnym układem, pomarańczowym akcentem i kluczowymi liczbami na widoku.">A one-page site for a retail consultant who helps shop owners and franchise networks run, sell, and grow better. Built from scratch with a bold dark layout, an orange accent, and the key numbers front and centre.</p>
+          <div class="tags"><span class="tag" data-pl="Jednostronicowa">One-page</span><span class="tag" data-pl="Doradztwo">Consulting</span><span class="tag" data-pl="Od zera">Custom build</span></div>
+          <span class="card-more" data-pl="Zobacz stronę &rarr;">Visit site &rarr;</span>
         </div>
       </a>
 
@@ -192,36 +269,36 @@
 
 <section id="stack" class="section">
   <div class="wrap reveal">
-    <div class="sec-label"><span>03 / built with</span><i></i></div>
-    <p class="skills-intro">I hand-write everything and keep it simple, fast, and easy to maintain. The tools I reach for most:</p>
+    <div class="sec-label"><span data-pl="03 / technologie">03 / built with</span><i></i></div>
+    <p class="skills-intro" data-pl="Wszystko piszę ręcznie i trzymam proste, szybkie i łatwe w utrzymaniu. Po co sięgam najczęściej:">I hand-write everything and keep it simple, fast, and easy to maintain. The tools I reach for most:</p>
     <div class="chips chips-lg">
-      <span class="chip">HTML</span>
-      <span class="chip">CSS</span>
-      <span class="chip">JavaScript</span>
-      <span class="chip">Responsive design</span>
-      <span class="chip">Accessibility</span>
-      <span class="chip">SEO &middot; Google Maps</span>
-      <span class="chip">Domains &amp; hosting</span>
-      <span class="chip">Admin panels</span>
-      <span class="chip">Contact forms</span>
-      <span class="chip">Newsletters</span>
-      <span class="chip">Online payments</span>
-      <span class="chip">Git &amp; GitHub</span>
+      <span class="chip" data-pl="HTML">HTML</span>
+      <span class="chip" data-pl="CSS">CSS</span>
+      <span class="chip" data-pl="JavaScript">JavaScript</span>
+      <span class="chip" data-pl="Strony responsywne">Responsive design</span>
+      <span class="chip" data-pl="Dostępność">Accessibility</span>
+      <span class="chip" data-pl="SEO &middot; Mapy Google">SEO &middot; Google Maps</span>
+      <span class="chip" data-pl="Domeny i hosting">Domains &amp; hosting</span>
+      <span class="chip" data-pl="Panele admina">Admin panels</span>
+      <span class="chip" data-pl="Formularze kontaktowe">Contact forms</span>
+      <span class="chip" data-pl="Newslettery">Newsletters</span>
+      <span class="chip" data-pl="Płatności online">Online payments</span>
+      <span class="chip" data-pl="Git i GitHub">Git &amp; GitHub</span>
     </div>
   </div>
 </section>
 
 <section id="contact" class="section section-dark">
-  <div class="wrap reveal"><div class="sec-label"><span>04 / contact</span><i></i></div>
+  <div class="wrap reveal"><div class="sec-label"><span data-pl="04 / kontakt">04 / contact</span><i></i></div>
     <div class="contact-grid">
       <div>
-        <div class="big">Need a website for your business? Let's build it.</div>
-        <p class="sub">I build complete sites for small businesses: design, code, hosting, Google, a simple admin panel, and online payments when you need them. Tell me what you do and I will come back with a clear plan and price.</p>
+        <div class="big" data-pl="Potrzebujesz strony dla swojej firmy? Zróbmy ją.">Need a website for your business? Let's build it.</div>
+        <p class="sub" data-pl="Tworzę kompletne strony dla małych firm: projekt, kod, hosting, Google, prosty panel admina i płatności online, gdy ich potrzebujesz. Napisz, czym się zajmujesz, a wrócę z jasnym planem i wyceną.">I build complete sites for small businesses: design, code, hosting, Google, a simple admin panel, and online payments when you need them. Tell me what you do and I will come back with a clear plan and price.</p>
       </div>
       <div class="contact-links">
-        <a href="mailto:dominikszewczyk123@gmail.com"><span class="lbl">Email</span><span class="val">dominikszewczyk123@gmail.com</span></a>
-        <a href="tel:+48797788847"><span class="lbl">Phone</span><span class="val">+48 797 788 847</span></a>
-        <a href="https://wa.me/48797788847" target="_blank" rel="noopener"><span class="lbl">WhatsApp</span><span class="val">Message me &rarr;</span></a>
+        <a href="mailto:dominikszewczyk123@gmail.com"><span class="lbl" data-pl="E-mail">Email</span><span class="val">dominikszewczyk123@gmail.com</span></a>
+        <a href="tel:+48797788847"><span class="lbl" data-pl="Telefon">Phone</span><span class="val">+48 797 788 847</span></a>
+        <a href="https://wa.me/48797788847" target="_blank" rel="noopener"><span class="lbl">WhatsApp</span><span class="val" data-pl="Napisz do mnie &rarr;">Message me &rarr;</span></a>
         <a href="https://linkedin.com/in/dominik-szewczyk" target="_blank" rel="noopener"><span class="lbl">LinkedIn</span><span class="val">in/dominik-szewczyk &rarr;</span></a>
         <a href="https://github.com/DominikSzewczyk224180" target="_blank" rel="noopener"><span class="lbl">GitHub</span><span class="val">DominikSzewczyk224180 &rarr;</span></a>
       </div>
@@ -231,13 +308,58 @@
 <footer>
   <div class="wrap foot">
     <span>&copy; 2026 Dominik Szewczyk</span>
-    <span>Designed and built from scratch &middot; HTML &middot; CSS &middot; JS</span>
+    <span data-pl="Zaprojektowane i zbudowane od zera &middot; HTML &middot; CSS &middot; JS">Designed and built from scratch &middot; HTML &middot; CSS &middot; JS</span>
   </div>
 </footer>
 <a class="chat-fab" href="https://wa.me/48797788847?text=Hi%20Dominik%2C%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20chat." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
   <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2m0 18.15c-1.52 0-3.01-.41-4.3-1.18l-.31-.18-3.12.82.83-3.04-.2-.32a8.2 8.2 0 0 1-1.26-4.36c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.23-8.24 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.22-.17-.47-.29"/></svg>
-  <span>Let's chat</span>
+  <span data-pl="Napisz">Let's chat</span>
 </a>
 <script src="assets/js/main.js"></script>
+<script>
+(function(){
+  var btn=document.getElementById('langBtn');
+  if(!btn) return;
+  var flagPl=btn.querySelector('.flag-pl');
+  var flagGb=btn.querySelector('.flag-gb');
+  var label=btn.querySelector('.lang-label');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var lang='en';
+
+  var nodes=document.querySelectorAll('[data-pl]');
+  nodes.forEach(function(el){ el.setAttribute('data-en', el.textContent); });
+
+  var rot=document.querySelector('.rotate-w');
+  var wEn=rot?(rot.getAttribute('data-words-en')||'').split('|').filter(Boolean):[];
+  var wPl=rot?(rot.getAttribute('data-words-pl')||'').split('|').filter(Boolean):[];
+  var wi=0;
+  function words(){ return lang==='pl'?wPl:wEn; }
+  if(rot){ rot.textContent=words()[0]||''; }
+  if(rot && !reduce && words().length>1){
+    setInterval(function(){
+      var list=words(); if(list.length<2) return;
+      wi=(wi+1)%list.length;
+      rot.style.opacity='0';
+      setTimeout(function(){ rot.textContent=words()[wi]; rot.style.transition='opacity .3s'; rot.style.opacity='1'; },280);
+    },2600);
+  }
+
+  function updateBtn(){
+    if(lang==='en'){ flagPl.hidden=false; flagGb.hidden=true; label.textContent='Polski'; btn.setAttribute('aria-label','Przelacz na polski'); }
+    else { flagPl.hidden=true; flagGb.hidden=false; label.textContent='English'; btn.setAttribute('aria-label','Switch to English'); }
+  }
+  function setLang(l){
+    lang=l;
+    document.documentElement.lang=l;
+    nodes.forEach(function(el){
+      el.textContent = (l==='pl') ? el.getAttribute('data-pl') : el.getAttribute('data-en');
+    });
+    if(rot){ rot.textContent=words()[wi] || words()[0] || ''; }
+    updateBtn();
+  }
+  btn.addEventListener('click',function(){ setLang(lang==='en'?'pl':'en'); });
+  updateBtn();
+})();
+</script>
 </body>
 </html>
