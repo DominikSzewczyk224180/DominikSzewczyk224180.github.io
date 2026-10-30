@@ -37,18 +37,42 @@
     }
   }
 
-  /* Scroll reveal */
-  var reveals = document.querySelectorAll('.reveal');
+  /* Scroll reveal. Content is visible by default (see CSS): we only hide
+     below-the-fold items (.pre) and animate them in. Several fallbacks make
+     sure nothing can stay stuck hidden if the observer never fires. */
+  var reveals = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
   if (reveals.length) {
+    var showReveal = function (el) { el.classList.remove('pre'); el.classList.add('in'); };
     if (reduce || !('IntersectionObserver' in window)) {
-      reveals.forEach(function (el) { el.classList.add('in'); });
+      reveals.forEach(showReveal);
     } else {
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      reveals.forEach(function (el) {
+        if (el.getBoundingClientRect().top > vh * 0.85) { el.classList.add('pre'); }
+        else { showReveal(el); }
+      });
       var ro = new IntersectionObserver(function (entries) {
         entries.forEach(function (e) {
-          if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); }
+          if (e.isIntersecting) { showReveal(e.target); ro.unobserve(e.target); }
         });
-      }, { threshold: 0.12 });
-      reveals.forEach(function (el) { ro.observe(el); });
+      }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+      reveals.forEach(function (el) { if (el.classList.contains('pre')) ro.observe(el); });
+
+      var sweep = function () {
+        var h = window.innerHeight || document.documentElement.clientHeight;
+        Array.prototype.slice.call(document.querySelectorAll('.reveal.pre')).forEach(function (el) {
+          if (el.getBoundingClientRect().top < h * 0.95) { showReveal(el); }
+        });
+        if (!document.querySelector('.reveal.pre')) {
+          window.removeEventListener('scroll', sweep);
+          window.removeEventListener('touchmove', sweep);
+          window.removeEventListener('resize', sweep);
+        }
+      };
+      window.addEventListener('scroll', sweep, { passive: true });
+      window.addEventListener('touchmove', sweep, { passive: true });
+      window.addEventListener('resize', sweep);
+      setTimeout(function () { reveals.forEach(showReveal); }, 4000);
     }
   }
 
